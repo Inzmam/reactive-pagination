@@ -11,6 +11,16 @@
   "engines": {
     "node": ">=10"
   },
+  "keywords": [
+    "react",
+    "reactjs",
+    "pagination",
+    "paginator",
+    "bootstrap",
+    "webpack",
+    "babel",
+    "react-component"
+  ],
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
