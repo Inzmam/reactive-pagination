@@ -4,7 +4,14 @@
   "description": "Pagination Module for react js application",
   "author": "",
   "license": "MIT",
-  "repository": "/reactive-pagination",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Inzmam/reactive-pagination.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Inzmam/reactive-pagination/issues"
+  },
+  "homepage": "https://github.com/Inzmam/reactive-pagination.git",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
