@@ -1,12 +1,13 @@
 import React, { Fragment, Component } from "react";
 import PropTypes from "prop-types";
-import styles from "./pagination_styles.css";
+import styles from "./pagination_styles.scss";
 
 class Pagination extends Component {
   static defaultProps = {
     activePage: 1,
     itemsCountPerPage: 10,
     delimeter: 5,
+    styling: "default",
   };
 
   static propTypes = {
@@ -14,6 +15,7 @@ class Pagination extends Component {
     itemsCountPerPage: PropTypes.number,
     totalItemsCount: PropTypes.number,
     delimeter: PropTypes.number,
+    styling: PropTypes.string,
   };
 
   constructor(props) {
@@ -136,9 +138,7 @@ class Pagination extends Component {
             })
           }
         >
-          <a href="#" className={styles.page_link}>
-            {i}
-          </a>
+          <button className={styles.page_link}>{i}</button>
         </li>
       );
     }
@@ -146,15 +146,28 @@ class Pagination extends Component {
     return pagination_items;
   };
 
+  set_base_class = () => {
+    const { styling } = this.props;
+    let base_class = styles.pagination;
+
+    if (styling === "default") {
+      // Do Nothhing. Use default values
+    } else if (styling === "materialize_css") {
+      base_class = styles.materialize_css;
+    }
+
+    return base_class;
+  };
+
   render_pagination = () => {
     const { page_count } = this.state;
+    let base_class = this.set_base_class();
     let pagination_html = (
       <Fragment>
-        <ul className={styles.pagination}>
+        <ul className={base_class}>
           <li className={styles.page_item}>
-            <a
-              href="#"
-              className={styles.page_link}
+            <button
+              className={styles.page_link_first}
               aria-label="Last"
               onClick={(event) =>
                 this.handleChange(event, {
@@ -164,15 +177,14 @@ class Pagination extends Component {
                 })
               }
             >
-              <span aria-hidden="true">«</span>
+              {this.render_first_arrow()}
               <span className={styles.sr_only}>First</span>
-            </a>
+            </button>
           </li>
 
           <li className={styles.page_item}>
-            <a
-              href="#"
-              className={styles.page_link}
+            <button
+              className={styles.page_link_prev}
               aria-label="Previous"
               onClick={(event) =>
                 this.handleChange(event, {
@@ -182,15 +194,14 @@ class Pagination extends Component {
                 })
               }
             >
-              <span aria-hidden="true">‹</span>
+              {this.render_prev_arrow()}
               <span className={styles.sr_only}>Previous</span>
-            </a>
+            </button>
           </li>
           {this.render_pagination_items()}
           <li className={styles.page_item}>
-            <a
-              href="#"
-              className={styles.page_link}
+            <button
+              className={styles.page_link_next}
               aria-label="Next"
               onClick={(event) =>
                 this.handleChange(event, {
@@ -200,15 +211,14 @@ class Pagination extends Component {
                 })
               }
             >
-              <span aria-hidden="true">›</span>
+              {this.render_next_arrow()}
               <span className={styles.sr_only}>Next</span>
-            </a>
+            </button>
           </li>
 
           <li className={styles.page_item}>
-            <a
-              href="#"
-              className={styles.page_link}
+            <button
+              className={styles.page_link_last}
               aria-label="Last"
               onClick={(event) =>
                 this.handleChange(event, {
@@ -218,15 +228,147 @@ class Pagination extends Component {
                 })
               }
             >
-              <span aria-hidden="true">»</span>
+              {this.render_last_arrow()}
               <span className={styles.sr_only}>Last</span>
-            </a>
+            </button>
           </li>
         </ul>
       </Fragment>
     );
 
     return pagination_html;
+  };
+
+  render_next_arrow = () => {
+    const { styling } = this.props;
+    let next_arrow_html = <></>;
+
+    if (styling === "default") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">›</span>
+        </>
+      );
+    } else if (styling === "materialize_css") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">
+            <svg width="8" height="12">
+              <path
+                strokeWidth="1"
+                stroke="#007bff"
+                fill="none"
+                d="M 0 0 L 7 6 L 0 12"
+              ></path>
+            </svg>
+          </span>
+        </>
+      );
+    }
+
+    return next_arrow_html;
+  };
+
+  render_last_arrow = () => {
+    const { styling } = this.props;
+    let next_arrow_html = <></>;
+
+    if (styling === "default") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">»</span>
+        </>
+      );
+    } else if (styling === "materialize_css") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">
+            <svg width="8" height="12">
+              <path
+                strokeWidth="1"
+                stroke="#007bff"
+                fill="none"
+                d="M 7 0 L 7 12"
+              ></path>
+              <path
+                strokeWidth="1"
+                stroke="#007bff"
+                fill="none"
+                d="M 0 0 L 4 6 L 0 12"
+              ></path>
+            </svg>
+          </span>
+        </>
+      );
+    }
+
+    return next_arrow_html;
+  };
+
+  render_first_arrow = () => {
+    const { styling } = this.props;
+    let prev_arrow_html = <></>;
+
+    if (styling === "default") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">«</span>
+        </>
+      );
+    } else if (styling === "materialize_css") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">
+            <svg width="8" height="12">
+              <path
+                strokeWidth="1"
+                stroke="#007bff"
+                fill="none"
+                d="M 1 0 L 1 12"
+              ></path>
+              <path
+                strokeWidth="1"
+                stroke="#007bff"
+                fill="none"
+                d="M 8 0 L 4 6 L 8 12"
+              ></path>
+            </svg>
+          </span>
+        </>
+      );
+    }
+
+    return prev_arrow_html;
+  };
+
+  render_prev_arrow = () => {
+    const { styling } = this.props;
+    let prev_arrow_html = <></>;
+
+    if (styling === "default") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">‹</span>
+        </>
+      );
+    } else if (styling === "materialize_css") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">
+            <svg width="8" height="12">
+              <path
+                strokeWidth="1"
+                stroke="#007bff"
+                fill="none"
+                d="M 8 0 L 1 6 L 8 12"
+              ></path>
+            </svg>
+          </span>
+        </>
+      );
+    }
+
+    return prev_arrow_html;
   };
 
   render() {

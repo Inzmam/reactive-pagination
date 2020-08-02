@@ -29,6 +29,8 @@ class App extends Component {
           totalItemsCount={400}
           // delimeter={10}
           onChange={this.handlePageChange}
+          styling="materialize_css"
+          // styling="default"
         />
       </Fragment>
     );
