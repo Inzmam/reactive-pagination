@@ -28,6 +28,10 @@
         box-shadow: none;
       }
 
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
       position: relative;
       display: block;
       padding: 8px 0;
@@ -68,6 +72,11 @@
         color: #fff;
         background-color: #007bff;
         border-color: #007bff;
+
+        &:hover {
+          background-color: #6d8cad;
+          border-color: #6d8cad;
+        }
       }
     }
 
@@ -79,6 +88,11 @@
       &:focus {
         outline: none;
         box-shadow: none;
+      }
+
+      &:hover {
+        background: #dee2e6;
+        border-color: #dee2e6;
       }
 
       position: relative;
