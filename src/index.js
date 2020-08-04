@@ -154,8 +154,11 @@ class Pagination extends Component {
       // Do Nothhing. Use default values
     } else if (styling === "materialize_css") {
       base_class = styles.materialize_css;
+    } else if (styling === "new_default") {
+      base_class = styles.new_default;
+    } else if (styling === "new_default_2") {
+      base_class = styles.new_default_2;
     }
-
     return base_class;
   };
 
@@ -249,6 +252,18 @@ class Pagination extends Component {
           <span aria-hidden="true">›</span>
         </>
       );
+    } else if (styling === "new_default") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">›</span>
+        </>
+      );
+    } else if (styling === "new_default_2") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">›</span>
+        </>
+      );
     } else if (styling === "materialize_css") {
       next_arrow_html = (
         <>
@@ -274,6 +289,18 @@ class Pagination extends Component {
     let next_arrow_html = <></>;
 
     if (styling === "default") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">»</span>
+        </>
+      );
+    } else if (styling === "new_default") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">»</span>
+        </>
+      );
+    } else if (styling === "new_default_2") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">»</span>
@@ -315,6 +342,18 @@ class Pagination extends Component {
           <span aria-hidden="true">«</span>
         </>
       );
+    } else if (styling === "new_default") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">«</span>
+        </>
+      );
+    } else if (styling === "new_default_2") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">«</span>
+        </>
+      );
     } else if (styling === "materialize_css") {
       prev_arrow_html = (
         <>
@@ -346,6 +385,18 @@ class Pagination extends Component {
     let prev_arrow_html = <></>;
 
     if (styling === "default") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">‹</span>
+        </>
+      );
+    } else if (styling === "new_default") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">‹</span>
+        </>
+      );
+    } else if (styling === "new_default_2") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">‹</span>

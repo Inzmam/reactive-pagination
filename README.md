@@ -1,13 +1,13 @@
 # reactive-pagination
 
-> Pagination Module for react js application
+**React Component to provide pagination for your application.** It comes with not just a basic layout but also provides some built in custom designs for your application.
 
 [![NPM](https://img.shields.io/npm/v/reactive-pagination.svg)](https://www.npmjs.com/package/reactive-pagination) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## Install
+## Installation
 
 ```bash
-npm install --save reactive-pagination
+npm install reactive-pagination --save
 ```
 
 ## Usage
@@ -48,6 +48,17 @@ class Example extends Component {
 }
 ```
 
+### Params
+
+| Name              | Type     | Default | Required | Description                                                                               |
+| ----------------- | -------- | ------- | -------- | ----------------------------------------------------------------------------------------- |
+| activePage        | Number   | 1       | **True** | Currently Active Page in Pagination                                                       |
+| totalItemsCount   | Number   |         | **True** | Total count of items which you are going to display                                       |
+| onChange          | Function |         | **True** | Page change handler function. Receives pageNum as argument.                               |
+| itemsCountPerPage | Number   | 10      | False    | Total items to display in single page                                                     |
+| delimeter         | Number   | 5       | False    | Number of pages in paginator, excluding navigation blocks (prev, next, first, last pages) |
+
 ## License
 
 MIT © [](https://github.com/)
+**Free Software, Hell Yeah!**
