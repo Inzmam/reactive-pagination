@@ -158,6 +158,8 @@ class Pagination extends Component {
       base_class = styles.new_default;
     } else if (styling === "new_default_2") {
       base_class = styles.new_default_2;
+    } else if (styling === "gharpar") {
+      base_class = styles.gharpar;
     }
     return base_class;
   };
@@ -252,6 +254,12 @@ class Pagination extends Component {
           <span aria-hidden="true">›</span>
         </>
       );
+    } else if (styling === "gharpar") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">›</span>
+        </>
+      );
     } else if (styling === "new_default") {
       next_arrow_html = (
         <>
@@ -279,6 +287,12 @@ class Pagination extends Component {
           </span>
         </>
       );
+    } else {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">›</span>
+        </>
+      );
     }
 
     return next_arrow_html;
@@ -289,6 +303,12 @@ class Pagination extends Component {
     let next_arrow_html = <></>;
 
     if (styling === "default") {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">»</span>
+        </>
+      );
+    } else if (styling === "gharpar") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">»</span>
@@ -327,6 +347,12 @@ class Pagination extends Component {
           </span>
         </>
       );
+    } else {
+      next_arrow_html = (
+        <>
+          <span aria-hidden="true">»</span>
+        </>
+      );
     }
 
     return next_arrow_html;
@@ -337,6 +363,12 @@ class Pagination extends Component {
     let prev_arrow_html = <></>;
 
     if (styling === "default") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">«</span>
+        </>
+      );
+    } else if (styling === "gharpar") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">«</span>
@@ -375,6 +407,12 @@ class Pagination extends Component {
           </span>
         </>
       );
+    } else {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">«</span>
+        </>
+      );
     }
 
     return prev_arrow_html;
@@ -385,6 +423,12 @@ class Pagination extends Component {
     let prev_arrow_html = <></>;
 
     if (styling === "default") {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">‹</span>
+        </>
+      );
+    } else if (styling === "gharpar") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">‹</span>
@@ -415,6 +459,12 @@ class Pagination extends Component {
               ></path>
             </svg>
           </span>
+        </>
+      );
+    } else {
+      prev_arrow_html = (
+        <>
+          <span aria-hidden="true">‹</span>
         </>
       );
     }
