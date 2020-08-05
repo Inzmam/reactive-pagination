@@ -152,14 +152,14 @@ class Pagination extends Component {
 
     if (styling === "default") {
       // Do Nothhing. Use default values
-    } else if (styling === "materialize_css") {
-      base_class = styles.materialize_css;
-    } else if (styling === "new_default") {
-      base_class = styles.new_default;
-    } else if (styling === "new_default_2") {
-      base_class = styles.new_default_2;
-    } else if (styling === "gharpar") {
-      base_class = styles.gharpar;
+    } else if (styling === "rounded") {
+      base_class = styles.rounded;
+    } else if (styling === "borderless") {
+      base_class = styles.borderless;
+    } else if (styling === "primary") {
+      base_class = styles.primary;
+    } else if (styling === "rounded_primary") {
+      base_class = styles.rounded_primary;
     }
     return base_class;
   };
@@ -254,25 +254,25 @@ class Pagination extends Component {
           <span aria-hidden="true">›</span>
         </>
       );
-    } else if (styling === "gharpar") {
+    } else if (styling === "rounded_primary") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">›</span>
         </>
       );
-    } else if (styling === "new_default") {
+    } else if (styling === "borderless") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">›</span>
         </>
       );
-    } else if (styling === "new_default_2") {
+    } else if (styling === "primary") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">›</span>
         </>
       );
-    } else if (styling === "materialize_css") {
+    } else if (styling === "rounded") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">
@@ -308,25 +308,25 @@ class Pagination extends Component {
           <span aria-hidden="true">»</span>
         </>
       );
-    } else if (styling === "gharpar") {
+    } else if (styling === "rounded_primary") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">»</span>
         </>
       );
-    } else if (styling === "new_default") {
+    } else if (styling === "borderless") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">»</span>
         </>
       );
-    } else if (styling === "new_default_2") {
+    } else if (styling === "primary") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">»</span>
         </>
       );
-    } else if (styling === "materialize_css") {
+    } else if (styling === "rounded") {
       next_arrow_html = (
         <>
           <span aria-hidden="true">
@@ -368,25 +368,25 @@ class Pagination extends Component {
           <span aria-hidden="true">«</span>
         </>
       );
-    } else if (styling === "gharpar") {
+    } else if (styling === "rounded_primary") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">«</span>
         </>
       );
-    } else if (styling === "new_default") {
+    } else if (styling === "borderless") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">«</span>
         </>
       );
-    } else if (styling === "new_default_2") {
+    } else if (styling === "primary") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">«</span>
         </>
       );
-    } else if (styling === "materialize_css") {
+    } else if (styling === "rounded") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">
@@ -428,25 +428,25 @@ class Pagination extends Component {
           <span aria-hidden="true">‹</span>
         </>
       );
-    } else if (styling === "gharpar") {
+    } else if (styling === "rounded_primary") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">‹</span>
         </>
       );
-    } else if (styling === "new_default") {
+    } else if (styling === "borderless") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">‹</span>
         </>
       );
-    } else if (styling === "new_default_2") {
+    } else if (styling === "primary") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">‹</span>
         </>
       );
-    } else if (styling === "materialize_css") {
+    } else if (styling === "rounded") {
       prev_arrow_html = (
         <>
           <span aria-hidden="true">

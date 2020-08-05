@@ -23,18 +23,64 @@ class App extends Component {
     return (
       <Fragment>
         <h2> This is a damn real component and below it is my package </h2>
+        <p> Default </p>
         <Pagination
           activePage={activePage}
           // itemsCountPerPage={10}
           totalItemsCount={400}
           // delimeter={10}
           onChange={this.handlePageChange}
-          styling="new_default_2"
-          // styling="new_default"
-          // styling="materialize_css"
-          // styling="default"
-          // styling="defaultsss"
-          // styling="gharpar"
+          styling="default"
+        />
+
+        <p> Borderless </p>
+        <Pagination
+          activePage={activePage}
+          // itemsCountPerPage={10}
+          totalItemsCount={400}
+          // delimeter={10}
+          onChange={this.handlePageChange}
+          styling="borderless"
+        />
+
+        <p> Primary </p>
+        <Pagination
+          activePage={activePage}
+          // itemsCountPerPage={10}
+          totalItemsCount={400}
+          // delimeter={10}
+          onChange={this.handlePageChange}
+          styling="primary"
+        />
+
+        <p> Rounded </p>
+        <Pagination
+          activePage={activePage}
+          // itemsCountPerPage={10}
+          totalItemsCount={400}
+          // delimeter={10}
+          onChange={this.handlePageChange}
+          styling="rounded"
+        />
+
+        <p> Rounded Primary </p>
+        <Pagination
+          activePage={activePage}
+          // itemsCountPerPage={10}
+          totalItemsCount={400}
+          // delimeter={10}
+          onChange={this.handlePageChange}
+          styling="rounded_primary"
+        />
+
+        <p> Any Wrong Name </p>
+        <Pagination
+          activePage={activePage}
+          // itemsCountPerPage={10}
+          totalItemsCount={400}
+          // delimeter={10}
+          onChange={this.handlePageChange}
+          styling="any_wrong_name"
         />
       </Fragment>
     );
