@@ -62,16 +62,25 @@ class Example extends Component {
 
 ## Examples
 
-- #### Default
-  ![alt text](https://image.prntscr.com/image/u-d2hlkjSVK2zANmIPTK2g.png)
-- #### Borderless
-  ![alt text](https://image.prntscr.com/image/KVw0KOXjRiGWrtOsFrf1XQ.png)
-- #### Primary
-  ![alt text](https://image.prntscr.com/image/rwdNmpiJSja4LsjbI2o0Zg.png)
-- #### Rounded
-  ![alt text](https://image.prntscr.com/image/SM-gE2cNSkmsvdDhHMJm3A.png)
-- #### Rounded Primary
-  ![alt text](https://image.prntscr.com/image/HfDgaBXlRZqIq-UwU0C4_Q.png)
+### Default
+
+![alt text](https://image.prntscr.com/image/UDSYJ3F1RAipmG6Ib2zNGg.png)
+
+### Borderless
+
+![alt text](https://image.prntscr.com/image/DxMXPzHZRvCcYWpqM7dTqg.png)
+
+### Primary
+
+![alt text](https://image.prntscr.com/image/8DiIHi1vRcC7p0IPwkmvtg.png)
+
+### Rounded
+
+![alt text](https://image.prntscr.com/image/8yFcAJrUSlu3vAf1Yc6_3A.png)
+
+### Rounded Primary
+
+![alt text](https://image.prntscr.com/image/37wW2aWNSZiHapFHtVyXuA.png)
 
 ## License
 
