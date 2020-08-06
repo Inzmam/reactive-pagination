@@ -64,23 +64,23 @@ class Example extends Component {
 
 ### Default
 
-![alt text](https://image.prntscr.com/image/UDSYJ3F1RAipmG6Ib2zNGg.png)
+![react pagination default styling](https://i.imgur.com/ffVHK4Q.png)
 
 ### Borderless
 
-![alt text](https://image.prntscr.com/image/DxMXPzHZRvCcYWpqM7dTqg.png)
+![react pagination borderless styling](https://i.imgur.com/FyAsfiC.png)
 
 ### Primary
 
-![alt text](https://image.prntscr.com/image/8DiIHi1vRcC7p0IPwkmvtg.png)
+![react pagination primary styling](https://i.imgur.com/XipxXrw.png)
 
 ### Rounded
 
-![alt text](https://image.prntscr.com/image/8yFcAJrUSlu3vAf1Yc6_3A.png)
+![react pagination rounded styling](https://i.imgur.com/W8sLzVo.png)
 
 ### Rounded Primary
 
-![alt text](https://image.prntscr.com/image/37wW2aWNSZiHapFHtVyXuA.png)
+![react pagination rounded primary styling](https://i.imgur.com/ULzG0s1.png)
 
 ## License
 
