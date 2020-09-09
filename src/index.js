@@ -32,6 +32,10 @@ class Pagination extends Component {
       page_count += 1;
     }
 
+    if (page_count === 0) {
+      page_count = 1;
+    }
+
     this.state = {
       page_count: page_count,
       extra_page_exists: extra_page_exists,
