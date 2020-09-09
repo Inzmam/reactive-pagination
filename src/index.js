@@ -32,7 +32,11 @@ class Pagination extends Component {
     };
   }
 
-  calcualte_page_count = () => {
+  componentDidMount = () => {
+    this.calculate_page_count();
+  };
+
+  calculate_page_count = () => {
     const { itemsCountPerPage, totalItemsCount, delimeter } = this.props;
 
     let extra_page_exists = false;
@@ -50,11 +54,11 @@ class Pagination extends Component {
       page_count = 1;
     }
 
-    this.state = {
+    this.setState({
       page_count: page_count,
       extra_page_exists: extra_page_exists,
       delimeter: delimeter,
-    };
+    });
   };
 
   handleChange = (event, params) => {
@@ -491,12 +495,7 @@ class Pagination extends Component {
   };
 
   render() {
-    return (
-      <Fragment>
-        {this.calcualte_page_count()}
-        {this.render_pagination()}
-      </Fragment>
-    );
+    return <Fragment>{this.render_pagination()}</Fragment>;
   }
 }
 
