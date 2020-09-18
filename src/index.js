@@ -32,6 +32,11 @@ class Pagination extends Component {
     };
   }
 
+  componentDidMount = () => {
+    // Calculate everything before hand
+    this.calculate_page_count();
+  };
+
   calculate_page_count = () => {
     const { itemsCountPerPage, totalItemsCount, delimeter } = this.props;
 
@@ -50,13 +55,19 @@ class Pagination extends Component {
       page_count = 1;
     }
 
-    let calculations = {
+    this.setState({
       page_count: page_count,
       extra_page_exists: extra_page_exists,
       delimeter: delimeter,
-    };
+    });
 
-    return calculations;
+    // let calculations = {
+    //   page_count: page_count,
+    //   extra_page_exists: extra_page_exists,
+    //   delimeter: delimeter,
+    // };
+
+    // return calculations;
   };
 
   handleChange = (event, params) => {
@@ -76,6 +87,7 @@ class Pagination extends Component {
           onChange(activePage - 1);
         }
       } else if (params.next === true) {
+        debugger;
         if (activePage === page_count) {
           // Do not move to next page
         } else {
@@ -86,8 +98,8 @@ class Pagination extends Component {
     }
   };
 
-  pages_less_than_delimeter = (calculations) => {
-    const { page_count } = calculations;
+  pages_less_than_delimeter = () => {
+    const { page_count } = this.state;
 
     let starting_index = 1;
     let ending_index = page_count;
@@ -95,9 +107,9 @@ class Pagination extends Component {
     return [starting_index, ending_index];
   };
 
-  pages_more_than_delimeter = (calculations) => {
+  pages_more_than_delimeter = () => {
     const { activePage } = this.props;
-    const { page_count, delimeter } = calculations;
+    const { page_count, delimeter } = this.state;
 
     let starting_index = 1;
     let ending_index = 0;
@@ -120,34 +132,28 @@ class Pagination extends Component {
     return [starting_index, ending_index];
   };
 
-  calculate_start_end_indexes = (calculations) => {
-    const { page_count } = calculations;
+  calculate_start_end_indexes = () => {
+    const { page_count } = this.state;
 
     let [starting_index, ending_index] = [1, page_count];
 
     if (page_count > 5) {
       // calculate page blocks that are greater than given number
-      [starting_index, ending_index] = this.pages_more_than_delimeter(
-        calculations
-      );
+      [starting_index, ending_index] = this.pages_more_than_delimeter();
     } else if (page_count < 5) {
-      [starting_index, ending_index] = this.pages_less_than_delimeter(
-        calculations
-      );
+      [starting_index, ending_index] = this.pages_less_than_delimeter();
     }
 
     return [starting_index, ending_index];
   };
 
-  render_pagination_items = (calculations) => {
+  render_pagination_items = () => {
     const { activePage } = this.props;
 
     let self = this;
     let pagination_items = [];
 
-    let [starting_index, ending_index] = this.calculate_start_end_indexes(
-      calculations
-    );
+    let [starting_index, ending_index] = this.calculate_start_end_indexes();
 
     for (let i = starting_index; i <= ending_index; i++) {
       pagination_items.push(
@@ -191,8 +197,7 @@ class Pagination extends Component {
   };
 
   render_pagination = () => {
-    let calculations = this.calculate_page_count();
-    const { page_count } = calculations;
+    const { page_count } = this.state;
 
     let base_class = this.set_base_class();
     let pagination_html = (
@@ -231,7 +236,7 @@ class Pagination extends Component {
               <span className={styles.sr_only}>Previous</span>
             </button>
           </li>
-          {this.render_pagination_items(calculations)}
+          {this.render_pagination_items()}
           <li className={styles.page_item}>
             <button
               className={styles.page_link_next}
